@@ -3,20 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dice-Challange</title>
+    <title>Dice-Challenge</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <h3>The one with the more dots wins!</h3>
-<img src="images/dice1.png" alt="">
 
+<label for="user1">User 1 Name:</label>
+<input type="text" id="user1" placeholder="Enter User 1 name">
+
+<label for="user2">User 2 Name:</label>
+<input type="text" id="user2" placeholder="Enter User 2 name">
+
+
+<img src="images/dice1.png" alt="">
 <img src="images/dice1.png" alt="">
 
 <p id="result"></p>
 <p id="result2"></p>
 <p id="winner"></p>
 
-    <script src="script.js"></script>
+
+<button onclick="playAgain()">Play again</button>
+
+
+<script src="script.js"></script>
 </body>
 </html>

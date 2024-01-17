@@ -1,35 +1,29 @@
-//user1 
+function playAgain() {
+    // Get user names
+    let user1Name = document.getElementById("user1").value;
+    let user2Name = document.getElementById("user2").value;
 
-let ranNumb = Math.floor(Math.random() * 6 + 1); // 1
-let ranImg = "images/dice" + ranNumb + ".png"; // images/dice1.png
+    // User 1
+    let ranNumb = Math.floor(Math.random() * 6 + 1);
+    let ranImg = "images/dice" + ranNumb + ".png";
+    let img1 = document.querySelectorAll("img")[0];
+    img1.setAttribute("src", ranImg);
+    let result = document.getElementById('result').innerHTML = `${user1Name}'s result: ${ranNumb}`;
 
+    // User 2
+    let ranNumb2 = Math.floor(Math.random() * 6 + 1);
+    let ranImg2 = "images/dice" + ranNumb2 + ".png";
+    let img2 = document.querySelectorAll("img")[1];
+    img2.setAttribute("src", ranImg2);
+    let result2 = document.getElementById('result2').innerHTML = `${user2Name}'s result: ${ranNumb2}`;
 
-let img1 = document.querySelectorAll("img")[0];
-img1.setAttribute("src", ranImg); 
-
-let result = document.getElementById('result').innerHTML = `Result for User 1: ${ranNumb}`
-
-
-
-//user2
-
-let ranNumb2 = Math.floor(Math.random()* 6 + 1); //2
-let ranImg2 = "images/dice" +  ranNumb2 + ".png" // images/dice2.png
-
-let img2 = document.querySelectorAll("img")[1];
-img2.setAttribute("src", ranImg2);
-
-let result2 = document.getElementById('result2').innerHTML = `Result for User 2: ${ranNumb2}`
-
-
-if (ranNumb > ranNumb2){
-    document.getElementById("winner").innerHTML = "Winner 1"
-}
-else if (ranNumb < ranNumb2){
-    document.getElementById("winner").innerHTML = "Winner 2"
-
-}
-else {
-    document.getElementById("winner").innerHTML = "Tie"
-
+    // Determine the winner
+    let winnerElement = document.getElementById("winner");
+    if (ranNumb > ranNumb2) {
+        winnerElement.innerHTML = `${user1Name} is the Winner!`;
+    } else if (ranNumb < ranNumb2) {
+        winnerElement.innerHTML = `${user2Name} is the Winner!`;
+    } else {
+        winnerElement.innerHTML = "It's a Tie!";
+    }
 }
